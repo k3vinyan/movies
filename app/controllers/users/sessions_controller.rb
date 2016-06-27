@@ -8,13 +8,21 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    super
+    puts "**********************************************************"
+    puts "**********************************************************"
+    puts "**********************************************************"
+    redirect_to currrent_user
   end
 
+  def show
+
+  end
   # DELETE /resource/sign_out
   def destroy
     super
   end
+
+
 
   # protected
   #
