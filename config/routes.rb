@@ -1,13 +1,33 @@
 Rails.application.routes.draw do
-  devise_for :users,
-    controllers: {
-      sessions: "users/sessions"
-    }
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  # devise/registrations
+#   get 'signup' => 'devise/registrations#new', :as => :new_user_registration
+#   post 'signup' => 'devise/registrations#create', :as => :user_registration
+#   get 'users/cancel' => 'devise/registrations#cancel', :as => :cancel_user_registration
+#   get 'users/edit' => 'devise/registrations#edit', :as => :edit_user_registration
+#   put 'users' => 'devise/registrations#update'
+#   delete 'users/cancel' => 'devise/registrations#destroy'
+
+devise_scope :user do
+  authenticated :user do
+    root 'users/sessions#show', as: :authenticated_root
+  end
+#
+  unauthenticated :user do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
+#
+#   # devise/sessions
+#   get 'signin' => 'devise/sessions#new', :as => :new_user_session
+#   post 'signin' => 'devise/sessions#create', :as => :user_session
+#   get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+# end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+#root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
