@@ -13,6 +13,7 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Sign up", new_user_session_path, class: "signup-link", remote: true %></li>
+        <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
         <li><a href="#">About</a></li>
         <li><%= link_to "Log in", new_user_registration_path, class: "login-link", remote: true %></li>
       </ul>

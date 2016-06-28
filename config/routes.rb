@@ -14,7 +14,7 @@ devise_scope :user do
   end
 #
   unauthenticated :user do
-    root 'devise/sessions#new', as: :unauthenticated_root
+    root 'welcome#index', as: :unauthenticated_root
   end
 end
 #

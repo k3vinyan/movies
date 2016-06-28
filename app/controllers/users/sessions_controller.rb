@@ -12,10 +12,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def show
-    p"**********************************************************"
-    p "**********************************************************"
-    p "                      This is show                        "
-    p "**********************************************************"
   end
   # DELETE /resource/sign_out
   def destroy
