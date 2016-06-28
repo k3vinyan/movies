@@ -16,6 +16,8 @@ devise_scope :user do
   unauthenticated :user do
     root 'welcome#index', as: :unauthenticated_root
   end
+
+  resource :movies
 end
 #
 #   # devise/sessions
