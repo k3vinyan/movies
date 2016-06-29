@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
 
   base_uri "https://api.themoviedb.org"
 
-  def initialize(optons)
+  def initialize
     @options = { query: { api_key: "14bcb6c3426d5e9a2bf0f8d393e9b38f" } }
   end
 
@@ -14,4 +14,5 @@ class Movie < ActiveRecord::Base
     puts @options
     self.class.get("/3/search/movie/", @options )
   end
+
 end

@@ -1,7 +1,16 @@
 <div class=container>
-  <div class=col-md-3>Profile</div>
-  <div class=col-md-6>Review</div>
-  <div class=col-md-3>Top Ten</div>
+<div class=col-md-3>Profile</div>
+<div class=col-md-6>Review
+
+  <%= form_tag movies_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+</div>
+<div class=col-md-3>Top Ten</div>
 </div>
 
 <%= link_to "movies", movies_path %>
