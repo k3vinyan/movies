@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+/*.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}*/
+
+.container {
+  height: 80vh;
+
+}
+
+.border {
+  border-style: solid;
+  border-color: blue;
+}
+
+.background {
+    background-image: url(back-2.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    animation: animatedBackground 60s linear infinite;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}

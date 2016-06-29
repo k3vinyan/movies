@@ -16,28 +16,30 @@
 //= require turbolinks
 //= require_tree .
 
-$( document ).ready(function() {
-    signUpForm();
-    logInForm();
-});
-
-function signUpForm(){
-  $('a.signup-link').click(function(e){
-    e.preventDefault();
-
-    $.get('/users/sign_up', function(response){
-      $('.user-form').empty().append(response).fadeIn(2000);
-    })
-
-  })
-};
-
-function logInForm(){
-  $('a.login-link').click(function(e){
-    e.preventDefault();
-
-    $.get('/users/sign_in', function(response){
-      $('.user-form').empty().append(response).fadeIn(2000);
-    })
-  })
-};
+// $( document ).ready(function() {
+//     signUpForm();
+//     logInForm();
+// });
+//
+//
+// function signUpForm(){
+//   $('a.signup-link').click(function(e){
+//     e.preventDefault();
+//
+//     // $.get('/users/sign_up', function(response){
+//     //   $('.user-form').empty().append(response).fadeIn(2000);
+//     // })
+//
+//
+//   })
+// };
+//
+// function logInForm(){
+//   $('a.login-link').click(function(e){
+//     e.preventDefault();
+//
+//     $.get('/users/sign_in', function(response){
+//       $('.user-form').empty().append(response).fadeIn(2000);
+//     })
+//   })
+// };

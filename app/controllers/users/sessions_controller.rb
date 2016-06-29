@@ -4,6 +4,12 @@ class Users::SessionsController < Devise::SessionsController
   #GET /resource/sign_in
   def new
     super
+    # respond_to do |format|
+    #   format.json { render json: {}, status: :ok}
+    #   format.html
+    #   format.js { render "new"}
+    #   return
+    # end
   end
 
   #POST /resource/sign_in
@@ -12,6 +18,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def show
+
   end
   # DELETE /resource/sign_out
   def destroy

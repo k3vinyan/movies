@@ -3,11 +3,11 @@
 <div class=col-md-6>Review
 
   <%= form_tag movies_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
 
 </div>
 <div class=col-md-3>Top Ten</div>
