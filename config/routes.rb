@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   # devise/registrations
 #   get 'signup' => 'devise/registrations#new', :as => :new_user_registration
 #   post 'signup' => 'devise/registrations#create', :as => :user_registration
@@ -10,13 +10,23 @@ Rails.application.routes.draw do
 
 devise_scope :user do
   authenticated :user do
-    root 'users/sessions#show', as: :authenticated_root
+    root 'users/sessions#show', as: "users"
   end
 #
   unauthenticated :user do
     root 'welcome#index', as: :unauthenticated_root
   end
+
+  resource :movies
+  get 'movies/top_rated' => 'movies#top_rated'
+  get 'movies/of_the_day' => 'movies#of_the_day'
+  get 'movies/now_playing' => 'movies#now_playing'
+  get 'movies/upcoming' => 'movies#upcoming'
+  get 'movies/search' => 'movies#search'
+
+  get '/about' => 'welcome#about'
 end
+
 #
 #   # devise/sessions
 #   get 'signin' => 'devise/sessions#new', :as => :new_user_session

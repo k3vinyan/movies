@@ -4,14 +4,15 @@
   <title>Movies</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Candal|Oxygen", media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render "users/partials/navbar" %>
 <% if notice || alert %>
-  <span class="notice"><%= notice %></span>
-  <span class="alert"><%= alert %></span>
+  <!-- <span class="notice"><%= notice %></span>
+  <span class="alert"><%= alert %></span> -->
 <% end %>
 
 <%= yield %>

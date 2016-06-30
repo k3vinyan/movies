@@ -3,15 +3,26 @@ class Users::SessionsController < Devise::SessionsController
 
   #GET /resource/sign_in
   def new
-    super
+    @user = User.new
+    if request.xhr?
+      respond_to do |format|
+        format.js { render "new", resource: :resource }
+      end
+    end
   end
 
   #POST /resource/sign_in
   def create
     super
+    puts "***********************************"
+    puts "********** this is create *********"
+    puts "***********************************"
+
+    puts params
   end
 
   def show
+
   end
   # DELETE /resource/sign_out
   def destroy

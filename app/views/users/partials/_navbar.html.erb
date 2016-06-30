@@ -1,5 +1,4 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <nav class="navbar navbar-inverse">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed"
         data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -12,11 +11,18 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign up", new_user_session_path, class: "signup-link", remote: true %></li>
-        <li><a href="#">About</a></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
+        <% if current_user %>
+          <li><%= link_to "Home", user_session_path%></li>
+        <% end %>
+        <% if !current_user %>
+          <li><%= link_to "Signin", new_user_registration_path, class: "login-link", remote: true %></li>
+        <% end %>
+        <li><%= link_to "About", about_path, class: "about-link", remote: true %></li>
+        <% if current_user %>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
+          <% else %>
+          <li><%= link_to "Login", new_user_session_path, class: "signin-link", remote: true  %></li>
+        <% end %>
       </ul>
     </div>
-
-  </div>
 </nav>

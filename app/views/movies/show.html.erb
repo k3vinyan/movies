@@ -1,0 +1,24 @@
+<%if @movies %>
+  <% @movies["results"].each do |movie| %>
+    <div class="container">
+      <div class="poster col-md-6">
+        <img src=<%= poster_link(movie["poster_path"]) %> />
+      </div>
+      <div class="info col-md-6">
+        <div class="title">
+          <em>Title:</em> <%= movie["title"]%>(<%= movie["original_title"] %>)
+        </div>
+        <p></p>
+        <div class="overview">
+          <em>Overview:</em>
+          <% if movie["overview"] == "" %>
+            n/a
+          <% end %>
+          <%= movie["overview"]%>
+        </div>
+
+      </div>
+
+    </div>
+  <% end %>
+<% end %>

@@ -3,9 +3,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @user = User.new
+    respond_to do |format|
+      format.js
+    end
+  end
 
   # POST /resource
   # def create
