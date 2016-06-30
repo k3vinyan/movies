@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 devise_scope :user do
   authenticated :user do
-    root 'users/sessions#show', as: :authenticated_root
+    root 'users/sessions#show', as: "users"
   end
 #
   unauthenticated :user do
@@ -18,7 +18,13 @@ devise_scope :user do
   end
 
   resource :movies
+
+  get 'movies/top_rated' => 'movies#top_rated'
+  get 'movies/of_the_day' => 'movies#of_the_day'
+  get 'movies/now_playing' => 'movies#now_playing'
+  get 'movies/upcoming' => 'movies#upcoming'
 end
+
 #
 #   # devise/sessions
 #   get 'signin' => 'devise/sessions#new', :as => :new_user_session

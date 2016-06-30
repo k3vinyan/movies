@@ -11,8 +11,23 @@ class Movie < ActiveRecord::Base
 
   def find_movies(input)
     @options[:query] = @options[:query].merge(query: input)
-    puts @options
     self.class.get("/3/search/movie/", @options )
+  end
+
+  def top_rated_movies
+    self.class.get("/3/movie/top_rated", @options)
+  end
+
+  def upcoming_movies
+    self.class.get("3/movie/upcoming", @options)
+  end
+
+  def popular_movies
+    self.class.get("/3/movie/popluar", @options)
+  end
+
+  def now_playing_movies
+    self.class.get("/3/movies/popular", @option)
   end
 
 end

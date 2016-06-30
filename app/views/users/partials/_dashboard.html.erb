@@ -1,16 +1,24 @@
-<div class=container>
-<div class=col-md-3>Profile</div>
-<div class=col-md-6>Review
-
-  <%= form_tag movies_path, :method => 'get' do %>
-    <p>
+<div class="container border">
+  <div class="row">
+    <div class="col-md-3 border">Profile</div>
+    <div class="col-md-6 border">Review
+      <%= form_tag movies_path, :method => 'get' do %>
+      <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
-    </p>
-  <% end %>
+      </p>
+      <% end %>
 
-</div>
-<div class=col-md-3>Top Ten</div>
+    </div>
+    <div class="col-md-3 border">Top Ten
+      <ul>
+        <li><%= link_to "Top Rated Movies", movies_top_rated_path %></li>
+        <li><%= link_to "Popular Movies of the Day", movies_of_the_day_path %></li>
+        <li><%= link_to "Now Playing", movies_now_playing_path %></li>
+        <li><%= link_to "Upcoming movies", movies_upcoming_path %></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <%= link_to "movies", movies_path %>
