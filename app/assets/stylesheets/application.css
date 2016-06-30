@@ -25,18 +25,23 @@
 
 }
 
+.navbar-default {
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
+}
+
 .border {
   border-style: solid;
   border-color: blue;
 }
 
-.background {
+/*body {
     background-image: url(back-2.jpg);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
     animation: animatedBackground 60s linear infinite;
-}
+}*/
 
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
