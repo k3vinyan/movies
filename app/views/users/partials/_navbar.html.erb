@@ -14,12 +14,14 @@
         <% if current_user %>
           <li><%= link_to "Home", user_session_path%></li>
         <% end %>
-        <li><%= link_to "Sign up", new_user_session_path, class: "signup-link" %></li>
-        <li><a href="#">About</a></li>
+        <% if !current_user %>
+          <li><%= link_to "Signin", new_user_registration_path, class: "login-link", remote: true %></li>
+        <% end %>
+        <li><%= link_to "About", about_path, class: "about-link", remote: true %></li>
         <% if current_user %>
           <li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
           <% else %>
-          <li><%= link_to "Log in", new_user_registration_path, class: "login-link" %></li>
+          <li><%= link_to "Login", new_user_session_path, class: "signin-link", remote: true  %></li>
         <% end %>
       </ul>
     </div>

@@ -10,13 +10,14 @@
       <% end %>
 
     </div>
-    <div class="col-md-3 border">Top Ten
-      <ul>
+    <div class="col-md-3 border">
+      <ul>Top Ten
         <li><%= link_to "Top Rated Movies", movies_top_rated_path %></li>
         <li><%= link_to "Popular Movies of the Day", movies_of_the_day_path %></li>
         <li><%= link_to "Now Playing", movies_now_playing_path %></li>
         <li><%= link_to "Upcoming movies", movies_upcoming_path %></li>
       </ul>
+      <p><%= link_to "Search", movies_search_path%></p>
     </div>
   </div>
 </div>

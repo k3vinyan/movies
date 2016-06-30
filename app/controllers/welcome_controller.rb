@@ -6,7 +6,10 @@ class WelcomeController < ApplicationController
     # return
   end
 
-  def destroy
-    puts "hello"
+  def about
+    respond_to do |format|
+    format.js
+    end
   end
+
 end

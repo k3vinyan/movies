@@ -1,18 +1,2 @@
-
-
-$('div.user-form').append("<%= escape_javascript(render @users) %>");
-
-//     })
-//
-//   })
-// };
-//
-// function logInForm(){
-//   $('a.login-link').click(function(e){
-//     e.preventDefault();
-//
-//     $.get('/users/sign_in', function(response){
-//       $('.user-form').empty().append(response).fadeIn(2000);
-//     })
-//   })
-// };
+console.log("cat")
+$('#front').html("<%= j (render 'new') %>").hide().fadeIn();

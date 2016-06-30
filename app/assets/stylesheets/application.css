@@ -20,6 +20,21 @@
   text-align: center;
 }*/
 
+body {
+  background: #222222;
+  font-family: 'Oxygen', Candal, Arial, sans-serif;
+  color: white;
+}
+
+.title {
+  color: white;
+  font-family: 'Candal';
+}
+
+.opacity {
+  background-color: black;
+}
+
 .container {
   height: 80vh;
 
@@ -34,6 +49,7 @@
   border-style: solid;
   border-color: blue;
 }
+
 
 /*body {
     background-image: url(back-2.jpg);

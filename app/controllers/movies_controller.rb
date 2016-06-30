@@ -19,14 +19,20 @@ class MoviesController < ApplicationController
 
   def of_the_day
     @movies = Movie.new.popular_movies
+    render 'top_rated'
   end
 
   def now_playing
     @movies = Movie.new.now_playing_movies
+    render 'top_rated'
   end
 
   def upcoming
     @movies = Movie.new.now_playing_movies
+    render 'top_rated'
+  end
+
+  def search
   end
 
 end
